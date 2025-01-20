@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Jennifer Akinyi",
+      "email": "admin@gmail.com",
+      "role": "admin",
+      "password": "admin123"
+    },
+    {
+      "id": "2",
+      "name": "Adrian Martin",
+      "email": "adrian@gmail.com",
+      "role": "user",
+      "password": "pass123"
+    },
+    {
+      "id": "3e4b",
+      "name": "James Michael",
+      "email": "james@gmail.com",
+      "role": "user",
+      "password": "james"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Samsung Galaxy S23",
+      "description": "The Samsung Galaxy S23 Ultra combines sleek design with powerful performance, featuring a 6.8' AMOLED display and the Snapdragon 8 Gen 2 processor. Its 200MP pro-grade camera, S Pen integration, and long-lasting battery make it perfect for productivity and creativity.",
+      "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
+      "price": 1000
+    },
+    {
+      "id": "2",
+      "name": "Television",
+      "description": "Experience stunning visuals with this 55' 4K Smart TV, featuring vibrant HDR picture quality and built-in streaming apps for endless entertainment. Its sleek design and powerful sound deliver a cinematic experience at home.",
+      "image": "https://plus.unsplash.com/premium_photo-1683133215610-854ad000bba1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dGVsZXZpc2lvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "price": 2000
+    },
+    {
+      "id": "3",
+      "name": "JBL Speaker",
+      "description": "The JBL Flip 6 delivers powerful, crystal-clear sound in a compact, waterproof design. Enjoy up to 12 hours of playtime, making it perfect for parties, outdoor adventures, or daily use.",
+      "image": "https://images.unsplash.com/photo-1645537335722-01e6205ca0a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 2000
+    },
+    {
+      "id": "4",
+      "name": "Headphones",
+      "description": "These wireless over-ear headphones provide immersive sound, active noise cancellation, and up to 30 hours of battery life. Lightweight and comfortable, they're ideal for work, travel, or relaxing at home.",
+      "image": "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 2000
+    },
+    {
+      "id": "5",
+      "name": "Airpods",
+      "description": "AirPods offer seamless connectivity, crystal-clear audio, and a compact design for ultimate convenience. With spatial audio and a long-lasting battery, they're perfect for calls, music, and podcasts.",
+      "image": "https://images.unsplash.com/photo-1606400082777-ef05f3c5cde2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 2000
+    }
+  ],
+  "cart": []
+}
