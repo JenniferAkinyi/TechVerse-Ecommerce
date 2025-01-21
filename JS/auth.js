@@ -33,12 +33,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("http://localhost:3000/users");
       const users = await response.json();
 
+      const admin = users.find(
+        (u) =>
+          u.email === email && u.password === password && u.role === "admin"
+      );
       const user = users.find(
         (u) => u.email === email && u.password === password
       );
 
-      if (user) {
+      if (admin) {
+        console.log("Login successful!", admin);
+        localStorage.setItem('loggedInUser', JSON.stringify(admin));
+        window.location.href = "admin.html";
+      } else if (user) {
         console.log("Login successful!", user);
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
+        fetchUserCart(user.id);
         window.location.href = "user.html";
       } else {
         console.log("Invalid email or password");
@@ -60,4 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Login form not found");
   }
+  const fetchUserCart = async (userId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/cart?userId=${userId}`);
+      const userCart = await response.json();
+      console.log(userCart)
+      if (userCart.length > 0) {
+        cart = userCart[0].products;
+        updateCart(); 
+      }
+    } catch (error) {
+      console.log("Failed to fetch cart:", error);
+    }
+  }
+
 });

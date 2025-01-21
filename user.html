@@ -8,14 +8,35 @@
 </head>
 <body>
     <nav>
-        <h1>Shoppy</h1>
+        <h1>TechVerse</h1>
         <div class="user-details">
             <ion-icon name="cart-outline"></ion-icon>
             <a href="./index.html">Logout</a>  
         </div>
     </nav>
-    <div class="all-products" id="all-products">
-        <!-- display products -->
+    <div class="user-container">
+        <div class="product-section">
+            <h1>Products</h1>
+            <div class="all-products" id="all-products">
+                <!-- display products -->
+            </div>
+        </div>
+        <div class="cart-section">
+            <h1>Cart</h1>
+            <div class="cart-info">
+                <h3>Name</h3>
+                <h3>Price</h3>
+                <h3>Quantity</h3>
+            </div>
+            <hr>
+            <div class="cart-items" id="cart-items">
+                <!-- display cart items -->
+            </div>
+            <div class="total">
+                <h2>Total: <span id="total">0</span></h2>
+                <button id="checkout">Checkout</button>
+            </div>
+        </div>
     </div>
     
     <script src="./JS/user.js"></script>

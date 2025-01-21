@@ -31,25 +31,20 @@
       "price": 1000
     },
     {
-      "id": "2",
-      "name": "Television",
-      "description": "Experience stunning visuals with this 55' 4K Smart TV, featuring vibrant HDR picture quality and built-in streaming apps for endless entertainment. Its sleek design and powerful sound deliver a cinematic experience at home.",
-      "image": "https://plus.unsplash.com/premium_photo-1683133215610-854ad000bba1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dGVsZXZpc2lvbnxlbnwwfHwwfHx8MA%3D%3D",
-      "price": 2000
-    },
-    {
       "id": "3",
-      "name": "JBL Speaker",
+      "name": "JBL Speaker 2024",
       "description": "The JBL Flip 6 delivers powerful, crystal-clear sound in a compact, waterproof design. Enjoy up to 12 hours of playtime, making it perfect for parties, outdoor adventures, or daily use.",
       "image": "https://images.unsplash.com/photo-1645537335722-01e6205ca0a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 2000
+      "price": "2000",
+      "imageUrl": "https://images.unsplash.com/photo-1645537335722-01e6205ca0a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "4",
       "name": "Headphones",
       "description": "These wireless over-ear headphones provide immersive sound, active noise cancellation, and up to 30 hours of battery life. Lightweight and comfortable, they're ideal for work, travel, or relaxing at home.",
       "image": "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 2000
+      "price": "3000",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "5",
@@ -57,7 +52,50 @@
       "description": "AirPods offer seamless connectivity, crystal-clear audio, and a compact design for ultimate convenience. With spatial audio and a long-lasting battery, they're perfect for calls, music, and podcasts.",
       "image": "https://images.unsplash.com/photo-1606400082777-ef05f3c5cde2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "price": 2000
+    },
+    {
+      "id": "8601",
+      "name": "HP Laptop",
+      "description": "A fast laptop.",
+      "image": "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": "5000"
+    },
+    {
+      "id": "bacd",
+      "name": "Apple Headphones",
+      "description": "Good for everyday work.",
+      "image": "https://media.istockphoto.com/id/2034797472/photo/man-working-with-tablet-computer.webp?a=1&b=1&s=612x612&w=0&k=20&c=g-hP34rdWUQeo031155WxJgofdoHIONInMhX6denfhw=",
+      "price": "6000"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "1",
+      "userId": "2",
+      "products": [
+        {
+          "id": "1",
+          "name": "Samsung Galaxy S23",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Television",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": "3e4b",
+      "products": [
+        {
+          "id": "4",
+          "name": "Headphones",
+          "price": 3000,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
 }

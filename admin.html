@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>TechVerse</h1>
+        <div class="user-details">
+            <button id="add-product">Add Product</button>
+            <a href="./index.html">Logout</a>  
+        </div>
+    </nav>
+    <h1>Admin Dashboard</h1>
+    <div class="all-products" id="all-products">
+        <!-- display products -->
+    </div>
+    <div class="popup-form" id="popup-form">
+        <div class="form-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Add Product</h2>
+            <form id="dataForm">
+                <label for="title">Name:</label>
+                <input type="text" id="name" required />
+                <label for="imageUrl">Image URL:</label>
+                <input type="url" id="imageUrl" required />
+                <label for="description">Description: </label>
+                <input type="text" id="description"  required />
+                <label for="description">Price: </label>
+                <input type="text" id="price"  required />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup-form" id="edit-popup-form">
+        <div class="form-content">
+            <span class="close" id="close-edit-popup">&times;</span>
+            <h2>Edit Item</h2>
+            <form id="editDataForm">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" name="name" required />
+                <label for="edit-imageUrl">Image URL:</label>
+                <input type="url" id="edit-imageUrl" name="imageUrl" required />
+                <label for="edit-description">Description:</label>
+                <input type="text" id="edit-description" name="description" required />
+                <label for="edit-price">Price:</label>
+                <input type="number" id="edit-price" name="price" required />
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup-form" id="delete-confirmation-popup">
+        <div class="form-content">
+            <h2>Are you sure you want to delete this Movie?</h2>
+            <button id="confirm-delete"
+                style="background-color: red; color: white; border: none; padding: 10px; ">Delete</button>
+            <button id="cancel-delete"
+                style="background-color: orangered; color: white; border: none; padding: 10px;">Cancel</button>
+        </div>
+    </div>
+    <script src="./JS/admin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
