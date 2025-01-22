@@ -130,8 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('Close button found'); 
     }
-
-    // Verify if there are any buttons with the class 'edit'
     const editButtons = document.querySelectorAll('.edit');
     if (editButtons.length === 0) {
         console.error("No .edit buttons found on the page");
@@ -166,10 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('After:', editPopupForm.style.display);
         }
     })
-
-
-
-    // Handle form submission
     editDataForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -180,8 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const formData = new FormData(editDataForm);
         const updatedEvent = {};
-
-        // Convert form data to a JSON object
         formData.forEach((value, key) => {
             updatedEvent[key] = value;
         });

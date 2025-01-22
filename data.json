@@ -20,6 +20,20 @@
       "email": "james@gmail.com",
       "role": "user",
       "password": "james"
+    },
+    {
+      "id": "38ee",
+      "name": "Adrian Martin",
+      "email": "adrian@gmail.com",
+      "role": "user",
+      "password": "pass123"
+    },
+    {
+      "id": "291b",
+      "name": "Jennifer Ouma",
+      "email": "jenn@gmail.com",
+      "role": "user",
+      "password": "jennifer"
     }
   ],
   "products": [
@@ -32,19 +46,11 @@
     },
     {
       "id": "3",
-      "name": "JBL Speaker 2024",
+      "name": "JBL Speaker 2024(new version)",
       "description": "The JBL Flip 6 delivers powerful, crystal-clear sound in a compact, waterproof design. Enjoy up to 12 hours of playtime, making it perfect for parties, outdoor adventures, or daily use.",
       "image": "https://images.unsplash.com/photo-1645537335722-01e6205ca0a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "price": "2000",
       "imageUrl": "https://images.unsplash.com/photo-1645537335722-01e6205ca0a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "4",
-      "name": "Headphones",
-      "description": "These wireless over-ear headphones provide immersive sound, active noise cancellation, and up to 30 hours of battery life. Lightweight and comfortable, they're ideal for work, travel, or relaxing at home.",
-      "image": "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "3000",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "5",
@@ -66,6 +72,13 @@
       "description": "Good for everyday work.",
       "image": "https://media.istockphoto.com/id/2034797472/photo/man-working-with-tablet-computer.webp?a=1&b=1&s=612x612&w=0&k=20&c=g-hP34rdWUQeo031155WxJgofdoHIONInMhX6denfhw=",
       "price": "6000"
+    },
+    {
+      "id": "28ee",
+      "name": "Headphones",
+      "description": "a good quality",
+      "image": "https://media.istockphoto.com/id/1500129431/photo/headphones-floating-on-isolated-neon-background-wireless-headphones-concept-earphones-device.webp?a=1&b=1&s=612x612&w=0&k=20&c=hhrT-8bUS5fRLrDOfWz6OlgNaxdkcdtmSMHe5Fx0ThM=",
+      "price": "6000"
     }
   ],
   "cart": [
@@ -74,14 +87,10 @@
       "userId": "2",
       "products": [
         {
-          "id": "1",
-          "name": "Samsung Galaxy S23",
+          "id": "3",
+          "name": "JBL Speaker 2024",
+          "price": 2000,
           "quantity": 1
-        },
-        {
-          "id": "2",
-          "name": "Television",
-          "quantity": 2
         }
       ]
     },
@@ -90,9 +99,9 @@
       "userId": "3e4b",
       "products": [
         {
-          "id": "4",
-          "name": "Headphones",
-          "price": 3000,
+          "id": "3",
+          "name": "JBL Speaker 2024",
+          "price": 2000,
           "quantity": 1
         }
       ]

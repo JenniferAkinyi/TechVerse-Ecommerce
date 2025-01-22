@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  const messageElement = document.getElementById("message");
+  const displayMessage = (message, isError = false) => {
+    messageElement.textContent = message;
+    messageElement.style.display = "block";
+    messageElement.style.color = isError ? "red" : "green";
+  };
+
   const createUser = async (user) => {
     try {
       const response = await fetch("http://localhost:3000/users", {
@@ -10,8 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       const newUser = await response.json();
       console.log("The user has been created", newUser);
+      displayMessage("Registration successful! You can now log in.");
     } catch (error) {
       console.log(error);
+      displayMessage("Registration failed. Please try again.", true);
     }
   };
   const registrationForm = document.getElementById("register-form");
@@ -27,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Registration form not found");
   }
+  
 
   const getUser = async ({ email, password }) => {
     try {
@@ -44,20 +55,34 @@ document.addEventListener("DOMContentLoaded", () => {
       if (admin) {
         console.log("Login successful!", admin);
         localStorage.setItem('loggedInUser', JSON.stringify(admin));
-        window.location.href = "admin.html";
+        displayMessage("Login successful!");
+        setTimeout(()=> {
+          window.location.href = "admin.html";
+        }, 1000)
       } else if (user) {
         console.log("Login successful!", user);
         localStorage.setItem('loggedInUser', JSON.stringify(user));
+        displayMessage("Login successful!");
         fetchUserCart(user.id);
-        window.location.href = "user.html";
+        setTimeout(()=> {
+          window.location.href = "user.html";
+        }, 1000)
       } else {
         console.log("Invalid email or password");
-        alert("Invalid email or password");
+        displayMessage("Invalid email or password", true);
       }
     } catch (error) {
       console.log(error);
+      displayMessage("Failed to log in. Please try again.", true);
     }
   };
+  function checkForm() {
+    if(document.getElementById('email').value == "" || document.getElementById('password').value == "") {
+      displayMessage("Please fill in all fields", true);
+      return false;
+    }
+    return true;
+  }
   const loginForm = document.getElementById("login-form");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {

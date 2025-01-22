@@ -1,5 +1,16 @@
 let cart = [];
 
+function loadCart() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+    }
+}
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
 const fetchProducts = async () => {
     try {
         const response = await fetch('http://localhost:3000/products');
@@ -31,7 +42,6 @@ const getProducts = (products) => {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     addToCartButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            console.log('Button clicked');
             e.preventDefault(); 
             const id = button.getAttribute('product-id');
             const name = button.getAttribute('product-name');
@@ -57,68 +67,75 @@ function addToCart(product) {
 function updateCart() {
     const addedToCart = document.getElementById('cart-items');
     let output = '';
-    cart.forEach(({name, price, quantity}) => {
+    cart.forEach(({id, name, price, quantity}) => {
         output += `
             <div class="cart-item">
                 <h4>${name}</h4>
                 <p>${price}</p>
+                <ion-icon name="remove-outline" class="remove-product" product-id="${id}" product-quantity="${quantity}"></ion-icon>
                 <p>${quantity}</p> 
-                <ion-icon name="close-circle-outline" class="delete-button"></ion-icon>
+                <ion-icon name="add-outline" class="add-product" product-id="${id}" product-quantity="${quantity}"></ion-icon>
+                <ion-icon name="close-circle-outline" class="delete-button" product-id="${id}" product-name="${name}" product-price="${price}" product-quantity="${quantity}"></ion-icon>
             </div>
         `;
     });
     addedToCart.innerHTML = output;
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     document.getElementById('total').innerText = total.toFixed(2);
-    updateCartOnServer();
+    removeProduct();
+    addCartProduct();
+    removeCartProduct();
+    saveCart();
+}
+function removeProduct() {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const id = button.getAttribute('product-id');
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+        });
+    });
+}
+function addCartProduct() {
+    const addButtons = document.querySelectorAll('.add-product');
+    addButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const id = button.getAttribute('product-id');
+            const product = cart.find(item => item.id === id);
+            product.quantity += 1;
+            updateCart();
+        });
+    });
+}
+function removeCartProduct() {
+    const removeButtons = document.querySelectorAll('.remove-product');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const id = button.getAttribute('product-id');
+            const product = cart.find(item => item.id === id);
+            if (product.quantity > 1) {
+                product.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== id);
+            }
+            updateCart();
+        });
+    });
+}
+function checkout() {
+    const checkoutButton = document.getElementById('checkout');
+    checkoutButton.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Your cart is empty. Please add items to the cart before checking out.');
+            return;
+        }
+            alert('Checkout successful! Thank you for your purchase.');
+            cart = [];
+            updateCart();
+    }, {once: true});
 }
 
-async function updateCartOnServer() {
-    try {
-        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-        if (!loggedInUser) {
-            throw new Error('No logged-in user found');
-        }
-
-        const response = await fetch('http://localhost:3000/cart');
-        const carts = await response.json();
-        const userCart = carts.find(cart => cart.userId === loggedInUser.id);
-
-        if (userCart) {
-            const updateResponse = await fetch(`http://localhost:3000/cart/${userCart.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    id: userCart.id,
-                    userId: loggedInUser.id,
-                    products: cart,
-                }),
-            });
-            if (!updateResponse.ok) {
-                throw new Error('Failed to update cart on server');
-            }
-            console.log('Cart updated on server');
-        } else {
-            const createResponse = await fetch('http://localhost:3000/cart', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    userId: loggedInUser.id,
-                    products: cart,
-                }),
-            });
-            if (!createResponse.ok) {
-                throw new Error('Failed to create cart on server');
-            }
-            console.log('Cart created on server');
-        }
-    } catch (error) {
-        console.error('Error updating cart on server:', error);
-    }
-}
-
+loadCart();
 fetchProducts();
+checkout()

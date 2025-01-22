@@ -176,7 +176,7 @@ button[type="submit"] {
     font-size: 30px;
     color: red;
     cursor: pointer;
-}
+} 
 #delete-confirmation-popup {
     display: none;
     position: fixed;
