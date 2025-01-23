@@ -28,11 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (registrationForm) {
     registrationForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      createUser({ name, email, role: "user", password });
-      registrationForm.reset();
+      if(checkForm("register-form")){
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        createUser({ name, email, role: "user", password });
+        registrationForm.reset();
+      }
     });
   } else {
     console.error("Registration form not found");
@@ -76,10 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
       displayMessage("Failed to log in. Please try again.", true);
     }
   };
-  function checkForm() {
-    if(document.getElementById('email').value == "" || document.getElementById('password').value == "") {
-      displayMessage("Please fill in all fields", true);
-      return false;
+  function checkForm(formId) {
+    const form = document.getElementById(formId);
+    const inputs = form.querySelectorAll("input[required]");
+    for (const input of inputs) {
+      if (input.value.trim() === "") {
+        displayMessage("Please fill in all fields", true);
+        return false;
+      }
     }
     return true;
   }
@@ -87,10 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      getUser({ email, password });
-      loginForm.reset();
+      if(!checkForm("login-form")){
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        getUser({ email, password });
+        loginForm.reset();
+      }
     });
   } else {
     console.error("Login form not found");
@@ -108,5 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Failed to fetch cart:", error);
     }
   }
-
 });
+module.exports = { loginForm, createUser, getUser, fetchUserCart, checkForm };

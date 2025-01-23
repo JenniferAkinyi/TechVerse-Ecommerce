@@ -34,6 +34,13 @@
       "email": "jenn@gmail.com",
       "role": "user",
       "password": "jennifer"
+    },
+    {
+      "id": "0d31",
+      "name": "",
+      "email": "",
+      "role": "user",
+      "password": ""
     }
   ],
   "products": [
