@@ -117,4 +117,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-module.exports = { loginForm, createUser, getUser, fetchUserCart, checkForm };
