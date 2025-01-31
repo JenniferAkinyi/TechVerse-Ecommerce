@@ -41,6 +41,13 @@
       "email": "gladys@gmail.com",
       "role": "user",
       "password": "gladys"
+    },
+    {
+      "id": "9619",
+      "name": "Jane Doe",
+      "email": "jane@gmail.com",
+      "role": "user",
+      "password": "password"
     }
   ],
   "products": [
@@ -86,6 +93,13 @@
       "description": "a good quality",
       "image": "https://media.istockphoto.com/id/1500129431/photo/headphones-floating-on-isolated-neon-background-wireless-headphones-concept-earphones-device.webp?a=1&b=1&s=612x612&w=0&k=20&c=hhrT-8bUS5fRLrDOfWz6OlgNaxdkcdtmSMHe5Fx0ThM=",
       "price": "6000"
+    },
+    {
+      "id": "9f0c",
+      "name": "Imac",
+      "description": "Apple product",
+      "image": "https://images.unsplash.com/photo-1529336953128-a85760f58cb5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGVza3RvcHxlbnwwfHwwfHx8MA%3D%3D",
+      "price": "70000"
     }
   ],
   "cart": [

@@ -16,17 +16,17 @@
         </div>
         <div class="login-form" >
             <h2>Register</h2>
-            <div id="message" style="display: none;"></div>
+            <div id="message" style="display: none;" data-cy="message"></div>
             <form id="register-form">
                 <label for="name">Name:</label>
-                <input type="text" name="name" id="name" placeholder="Name">
+                <input type="text" name="name" id="name" placeholder="Name" data-cy="nameInput">
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" data-cy="emailInput">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <button type="submit">Register</button>
+                <input type="password" name="password" id="password" placeholder="Password" data-cy="passwordInput">
+                <button type="submit" data-cy="submitBtn">Register</button>
             </form>
-            <p>Already have an account?<a href="index.html">Login</a></p>
+            <p>Already have an account?<a href="index.html" data-cy="loginLink">Login</a></p>
         </div>
     </div> 
     <script src="./JS/registration.js"></script>

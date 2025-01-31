@@ -10,22 +10,21 @@
     <nav>
         <h1>TechVerse</h1>
     </nav>
-    <h1>WELCOME TO TECHVERSE</h1>
     <div class="container">
         <div class="login-img">
             <img src="./images/login.png" alt="login">
         </div>
         <div class="login-form" >
             <h2>Login</h2>
-            <div id="message" style="display: none;"></div>
+            <div id="message" style="display: none;" data-cy="message"></div>
             <form id="login-form" >
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" data-cy="emailInput">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password" placeholder="Password" >
-                <button type="submit">Login</button>
+                <input type="password" name="password" id="password" placeholder="Password" data-cy="passwordInput">
+                <button type="submit" data-cy="submitBtn">Login</button>
             </form>
-            <p>No account?<a href="register.html">Register</a></p>
+            <p>No account?<a href="register.html" data-cy="registrationLink">Register</a></p>
         </div>
     </div> 
     <script src="./JS/login.js"></script>

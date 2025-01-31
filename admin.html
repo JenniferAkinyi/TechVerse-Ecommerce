@@ -10,7 +10,7 @@
     <nav>
         <h1>TechVerse</h1>
         <div class="user-details">
-            <button id="add-product">Add Product</button>
+            <button id="add-product" data-cy="addProductBtn">Add Product</button>
             <a href="./index.html">Logout</a>  
         </div>
     </nav>
@@ -20,18 +20,19 @@
     </div>
     <div class="popup-form" id="popup-form">
         <div class="form-content">
+            <div id="message" style="display: none;" data-cy="message"></div>
             <span class="close" id="close-popup">&times;</span>
             <h2>Add Product</h2>
             <form id="dataForm">
                 <label for="title">Name:</label>
-                <input type="text" id="name" required />
+                <input type="text" id="name" data-cy="nameInput"/>
                 <label for="imageUrl">Image URL:</label>
-                <input type="url" id="imageUrl" required />
+                <input type="url" id="imageUrl" data-cy="imageInput"/>
                 <label for="description">Description: </label>
-                <input type="text" id="description"  required />
+                <input type="text" id="description" data-cy="descriptionInput"/>
                 <label for="description">Price: </label>
-                <input type="text" id="price"  required />
-                <button type="submit">Submit</button>
+                <input type="text" id="price" data-cy="priceInput"/>
+                <button type="submit"  data-cy="submitBtn">Submit</button>
             </form>
         </div>
     </div>
